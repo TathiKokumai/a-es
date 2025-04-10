@@ -31,6 +31,11 @@ jobs:
         with:
           path: . # Diretório a ser deployado (raiz do repositório neste caso)
 
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: . # Diretório a ser deployado (raiz do repositório neste caso)
+          
       - name: Deploy para GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v2
